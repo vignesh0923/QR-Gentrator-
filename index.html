@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <script>
+        function genQR() {
+            var gapi = "https://chart.googleapis.com/chart?cht=qr&chs=";
+            var image = document.getElementById("img")
+            var mytext = document.getElementById("text").value
+            var mysize = document.getElementById("size").value
+
+            if (mytext !== "" && mysize == "100") {
+                image.src = gapi + "100x100" + "&chl=" + mytext;
+            }
+            else if (mytext !== "" && mysize == "150") {
+                image.src = gapi + "150x150" + "&chl=" + mytext;
+            }
+            else if (mytext !== "" && mysize == "200") {
+                image.src = gapi + "200x200" + "&chl=" + mytext;
+            }
+            else if (mytext !== "" && mysize == "250") {
+                image.src = gapi + "250x250" + "&chl=" + mytext;
+            }
+            else if (mytext !== "" && mysize == "300") {
+                image.src = gapi + "300x300" + "&chl=" + mytext;
+            }
+            else {
+                alert("Please Enter Text!")
+            }
+        }
+    </script>
+    <center>
+    <div class="grid">
+            <h2>QR Code Generator</h2>
+            <div class="grid2">
+                <img src="" id="img">
+                <select class="select" name="" id="size">
+                    <option value="100">100x100</option>
+                    <option value="150">150x150</option>
+                    <option value="200">200x200</option>
+                    <option value="250" selected>250x250</option>
+                    <option value="300">300x300</option>
+                </select>
+                <br><br>
+                <textarea class="select" id="text" placeholder="Enter Text !"></textarea>
+                <br><br>
+                <input class="select" type="submit" value="GENERATE" onclick="genQR()">
+                
+            </div>
+
+    </div>
+</center>
+</body>
+
+</html>
